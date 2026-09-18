@@ -1,14 +1,14 @@
 const prompt = require("prompt-sync")();
 const INTENTOS = 10;
 const NUMMAX = 10;
-let NUMEROELEGIDO = null;
+let numeroElegido = null;
 let fin = false;
 
 function elegir (){
-    NUMEROELEGIDO = Math.floor(Math.random() * NUMMAX) + 1;
+    numeroElegido = Math.floor(Math.random() * NUMMAX) + 1;
 }
 
-function comprobar (NUMEROELEGIDO, INTENTOS, fin){
+function comprobar (numeroElegido, INTENTOS, fin){
     while (fin == false){
         if (INTENTOS == 0){
             console.log("Te has quedado sin intentos");
@@ -16,10 +16,10 @@ function comprobar (NUMEROELEGIDO, INTENTOS, fin){
         }else{
             let resupuesta = prompt("Adivina el numero: ");
             numeroAdivinado = Number(resupuesta);
-            if (numeroAdivinado > NUMEROELEGIDO){
+            if (numeroAdivinado > numeroElegido){
                 console.log("El numero es mas pequeño");
                 INTENTOS = INTENTOS - 1;
-            } else if (numeroAdivinado < NUMEROELEGIDO){
+            } else if (numeroAdivinado < numeroElegido){
                 console.log("El numero es mas grande");
                 INTENTOS = INTENTOS - 1;
             }else{
@@ -33,7 +33,7 @@ function comprobar (NUMEROELEGIDO, INTENTOS, fin){
 
 function main (){
     elegir();
-    comprobar(NUMEROELEGIDO, INTENTOS, fin);
+    comprobar(numeroElegido, INTENTOS, fin);
 }
 
 main();
