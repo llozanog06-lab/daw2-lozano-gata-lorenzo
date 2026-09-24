@@ -26,6 +26,7 @@ function comprobar(miSetNumeros, misAciertos, numAciertos, VECESREPETIDAS) { //f
             numAciertos++;
             console.log("¡Acertaste!");
             misAciertos.add(numeroAdivinado);
+            miSetNumeros.delete(numeroAdivinado);
         } else {
             console.log("Fallaste");
         }
