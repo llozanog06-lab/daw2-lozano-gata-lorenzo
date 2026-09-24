@@ -2,12 +2,12 @@
 const prompt = require("prompt-sync")();
 const equipo = new Map();
 
-function alistar(equipo){
+function alistar(equipo){  //función para alistar los jugadores con sus números al mapa
     let nombre;
     let numero;
 
-    do{
-        nombre = prompt("Introduce el nombre del jugador: ");
+    do{ //do-while para introducir los datos
+        nombre = prompt("Introduce el nombre del jugador (cadena en blanco para finalizar): ");
         if (nombre.trim() !== ""){
             numero = Number(prompt("Introduce el numero: "));
             equipo.set(numero, nombre);
@@ -16,10 +16,10 @@ function alistar(equipo){
 }
 
 
-function mostrar(equipo){
+function mostrar(equipo){ //función que sirve para mostrar el equipo segun el número elegido
     let consulta;
     do{
-        consulta = Number(prompt("Introduce el número del jugador que deseas consultar: "));
+        consulta = Number(prompt("Introduce el número del jugador que deseas consultar (introduce 0 para terminar): "));
         if (consulta !== 0 ){
             if (equipo.has(consulta)){
                 console.log(`El jugador con el número ${consulta}, es ${equipo.get(consulta)}`);
