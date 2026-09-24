@@ -31,10 +31,15 @@ function comprobar(miSetNumeros, misAciertos, numAciertos, VECESREPETIDAS) { //f
         }
     }
     console.log("Número de aciertos: " + numAciertos);
-    console.log("Tus números acertados son: ");
-    misAciertos.forEach(acierto =>{ //forEach que sirve para mostrar uno por uno los números acertados
-        console.log(acierto);
-    })
+    if (numAciertos == 0){
+        console.log("No has acertado ningún número.")
+    }else{
+        console.log("Tus números acertados son: ");
+        misAciertos.forEach(acierto =>{ //forEach que sirve para mostrar uno por uno los números acertados
+            console.log(acierto);
+        })
+    }
+    
 }
 
 function main() {
